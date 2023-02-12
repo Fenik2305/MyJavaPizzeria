@@ -1,7 +1,19 @@
 public class PizzaProject {
-    public class Storehouse {
+    public static class Pizzeria {
+        String pizzeria_name = new String();
+        int visitors_served;
+        Storehouse storehouse;
+        
+        public Pizzeria(String name) {
+            this.pizzeria_name = name;
+            this.visitors_served = 0;
+            this.storehouse = new Storehouse();
+        }
+    }
+
+    public static class Storehouse {
         int stored_dough, stored_cheese, stored_sauce, stored_pepperoni, stored_sausage, stored_drink;
-    
+
         public Storehouse() {
             this.stored_dough = 0;
             this.stored_sauce = 0;
@@ -28,5 +40,8 @@ public class PizzaProject {
 
     public static void main(String[] args) {
         System.out.println("I love you, PizzaProject <3");
+        
+        Pizzeria myPizzeria = new Pizzeria("MyPizzeria");
+        myPizzeria.storehouse.storage_display();
     }
 }
